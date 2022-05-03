@@ -1,8 +1,7 @@
 const contenedorTareas = document.getElementById("tareas")
 const btn = document.getElementById("btn-agregar")
 let arrayTareas = [];
-let arrayTareas2 = [];
-Local(arrayTareas);
+
 btn.onclick = () =>{
     const tareaAgregar = document.getElementById("text-agregar").value;
     arrayTareas.push(tareaAgregar)
@@ -49,3 +48,5 @@ function Local(){
         }
     }
 }
+
+Local(arrayTareas);
