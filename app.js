@@ -25,7 +25,7 @@ btn.onclick = () =>{
     }   
 }
 
-function Local(){
+function Local(arrayTareas){
     arrayTareas = JSON.parse(localStorage.getItem("tarea"))
     for (let index = 0; index < arrayTareas.length; index++) {
         const tareaAgregar = arrayTareas[index];
