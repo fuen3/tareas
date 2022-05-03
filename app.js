@@ -2,7 +2,7 @@ const contenedorTareas = document.getElementById("tareas")
 const btn = document.getElementById("btn-agregar")
 let arrayTareas = [];
 let arrayTareas2 = [];
-Local();
+Local(arrayTareas);
 btn.onclick = () =>{
     const tareaAgregar = document.getElementById("text-agregar").value;
     arrayTareas.push(tareaAgregar)
@@ -23,7 +23,7 @@ btn.onclick = () =>{
         arrayTareas.splice(index,1)
         localStorage.setItem("tarea", JSON.stringify(arrayTareas));
         div.remove()
-    }
+    }   
 }
 
 function Local(){
