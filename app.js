@@ -3,10 +3,10 @@ const btn = document.getElementById("btn-agregar")
 let arrayTareas = [];
 Local()
 btn.onclick = () =>{
-    if(arrayTareas === null){
-        arrayTareas = []
-    }
-    else{
+    // if(arrayTareas === null){
+    //     arrayTareas = []
+    // }
+    // else{
         const tareaAgregar = document.getElementById("text-agregar").value;
         arrayTareas.push(tareaAgregar)
         localStorage.setItem("tarea", JSON.stringify(arrayTareas));
@@ -27,7 +27,6 @@ btn.onclick = () =>{
         localStorage.setItem("tarea", JSON.stringify(arrayTareas));
         div.remove()
     }   
-    }
 }
 
 function Local(){
