@@ -3,11 +3,7 @@ const btn = document.getElementById("btn-agregar")
 let arrayTareas = [];
 Local()
 btn.onclick = () =>{
-    // if(arrayTareas === null){
-    //     arrayTareas = []
-    // }
-    // else{
-        const tareaAgregar = document.getElementById("text-agregar").value;
+        const tareaAgregar = document.getElementById("text-agregar").value || [];
         arrayTareas.push(tareaAgregar)
         localStorage.setItem("tarea", JSON.stringify(arrayTareas));
         let div = document.createElement("div")
@@ -21,7 +17,7 @@ btn.onclick = () =>{
         btn2.onclick = () =>{
         let temporal = tareaAgregar;
         arrayTareas = JSON.parse(localStorage.getItem("tarea"));
-         let index = arrayTareas.indexOf(temporal)
+        let index = arrayTareas.indexOf(temporal)
         console.log(index)
         arrayTareas.splice(index,1)
         localStorage.setItem("tarea", JSON.stringify(arrayTareas));
@@ -31,10 +27,8 @@ btn.onclick = () =>{
 
 function Local(){
     arrayTareas = JSON.parse(localStorage.getItem("tarea"))
-    if(arrayTareas === null){
-        arrayTareas = []
-    }
-    else{
+
+
         for (let index = 0; index < arrayTareas.length; index++) {
             const tareaAgregar = arrayTareas[index];
             let div = document.createElement("div")
@@ -54,7 +48,7 @@ function Local(){
                 localStorage.setItem("tarea", JSON.stringify(arrayTareas));
                 div.remove()
             }
-        }
+        
     }
 }
 
